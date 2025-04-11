@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: sans-serif;
+        }
+        nav {
+            background-color: blueviolet;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000
+        }
+        .logo {
+            color: white;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        .nav-links a:hover {
+            color: black;
+        }
+        @media (max-width: 768px) {
+            .nav-links {
+                flex-direction: column;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                background-color: #001524;
+                width: 100%;
+                display: none;
+                padding: 20px;
+            }
+            .nav-links.show {
+            display: flex;
+            }
+            .menu-toggle {
+            display: block;
+            font-size: 1.5rem;
+            color: white;
+            cursor: pointer;
+            }
+        }
+        .menu-toggle {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="logo">ManiDev</div>
+        <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+        <div class="nav-links" id="navlinks">
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Projects</a>
+            <a href="#">Contacts</a>
+        </div>
+    </nav>
+    <script>
+        function toggleMenu() {
+            const navLinks = document.getElementById('navlinks');
+            navLinks.classList.toggle('show');
+
+  // Hide menu when a link is clicked
+            const links = navLinks.querySelectorAll('a');
+            links.forEach(link => {
+                link.addEventListener('click', () => {
+                    navLinks.classList.remove('show');
+                });
+            });
+        }
+    </script>
+</body>
+</html>
