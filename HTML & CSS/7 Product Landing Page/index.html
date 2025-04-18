@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Landing Page</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Courier New', Courier, monospace;
+            line-height: 1.6;
+            background-color: #f9f9f9;
+            color: #333;
+            font-family: Poppins;
+        }
+        .container {
+            width: 90%;
+            margin: auto;
+            padding: 1px 0;
+        }
+        .header {
+            background-color: #191919;
+            padding: 1rem 0;
+            border-bottom: 2px solid #4b4a4ac9;
+            position: relative;
+            z-index: 10;
+        }
+        .header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .header .container > h1 {
+            color: white;
+            font-size: 26px;
+        }
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+        .nav-links a {
+            text-decoration: none;
+            background-color: #444444;
+            color: white;
+            font-weight: 600;
+            padding-top: 5px;
+            padding-bottom: 5px;
+            padding-left: 10px;
+            padding-right: 10px;
+            transition: transform 0.3s ease;
+        }
+        .nav-links a:hover {
+            transition: transform 0.3s ease-in-out;
+            background-color: #d400ff;
+            color: white;
+        }
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            flex-direction: column;
+            gap: 5px;
+        }
+        .bar {
+            width: 25px;
+            height: 3px;
+            background-color: white;
+            transition: all 0.3s ease-in-out;
+        }
+        .hero {
+            background-color: #00FFB5;
+            color: white;
+            padding: 4rem 0;
+            text-align: center;
+        }
+        .hero .btn {
+            display: inline-block;
+            margin-top: 1.5rem;
+            padding: 0.75rem 2rem;
+            background-color: #d400ff;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+        .hero .container > h2 {
+            font-size: 46px;
+            color: #191919;
+        }
+        .hero .container > p {
+            font-size: 16px;
+            color: #191919;
+        }
+        .features {
+            background: #191919;
+            padding: 4rem 0;
+        }
+        .features .container > h3 {
+            font-size: 46px;
+            color: white;
+        }
+        .features-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        .feature {
+            background: #444444;
+            color: white;
+            flex: 1;
+            padding: 1rem 1rem;
+            border-radius: 6px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            min-width: 250px;
+        }
+        .features .container .features-grid .feature > h4,p {
+            font-size: 16px;
+        }
+        .testimonial {
+            background: #fff;
+            padding: 50px 20px;
+            text-align: center;
+        }
+        .testimonial .container > h3 {
+            font-size: 46px;
+        }
+        .testimonial .container > p {
+            font-size: 16px;
+            margin-top: 10px;
+        }
+        .cta {
+            background: #00FFB5;
+            color: #191919;
+            text-align: center;
+            padding: 3rem 0;
+        }
+        .cta .btn {
+            display: inline-block;
+            margin-top: 1rem;
+            padding: 0.75rem 2rem;
+            background: #d400ff;
+            color: white;
+            border-radius: 5px;
+            font-weight: bold;
+            text-decoration: none;
+        }
+        .footer {
+            background: #191919;
+            color: white;
+            text-align: center;
+            padding: 5px 0;
+            font-size: 12px;
+        }
+        @media (max-width:768px) {
+            .header .container,
+            .features-grid {
+                display: flex;
+                flex-direction: column;
+            }
+            .nav-links {
+                position: absolute;
+                gap: 10px;
+                top: 70px;
+                left: 0;
+                right: 0;
+                background-color: #444444;
+                width: 100%;
+                flex-direction: column;
+                padding: 20px;
+                display: none;
+                z-index: 999;
+            }
+            .nav-links.active {
+                display: flex;
+            }
+            .hamburger {
+                display: flex;
+                z-index: 1001;
+            }
+            .hamburger.active .bar:nth-child(1) {
+                transform: rotate(45deg) translate(5px, 5px);
+            }
+            .hamburger.active .bar:nth-child(2) {
+                opacity: 0;
+            }
+            .hamburger.active .bar:nth-child(3) {
+                transform: rotate(-45deg) translate(6px, -6px);
+            }
+            .header .container {
+                flex-direction: row;
+                justify-content: space-around;
+            }
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <h1>Awesome Product</h1>
+            <nav>
+                <div class="hamburger" id="hamburger">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                </div>
+                <ul class="nav-links" id="nav-links">
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#testimonial">Testimonial</a></li>
+                    <li><a href="#cta">Get Started</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+          <h2>Boost Your Productivity</h2>
+          <p>All-in-one tool to supercharge your workflow and save hours every day.</p>
+          <a href="#cta" class="btn">Try for Free</a>
+        </div>
+      </section>
+
+    <section class="features" id="features">
+        <div class="container">
+            <h3>Why Choose Awesome Product</h3>
+            <div class="features-grid">
+                <div class="feature">
+                    <h4>Fast Performance</h4>
+                    <p>Optimized to give you a lightning fast experience.</p>
+                </div>
+                <div class="feature">
+                    <h4>Secure</h4>
+                    <p>Built with security as a top priority to protect your data.</p>
+                </div>
+                <div class="feature">
+                    <h4>Easy integration</h4>
+                    <p>Seamlessly integrates with your current tools and systems.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonial" id="testimonial">
+        <div class="container">
+            <h3>What Users Say</h3>
+            <p>"This product changed how we work-faster, better, easier!"</p>
+            <p>-Happy Customer</p>
+        </div>
+    </section>
+    
+    <section class="cta" id="cta">
+        <div class="container">
+            <h3>Get Started</h3>
+            <a href="#" class="btn">Create Your Free Account</a>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 AwesomeProduct. All rights reserved.</p>
+        </div>
+    </footer>
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('nav-links');
+      
+        hamburger.addEventListener('click', () => {
+          hamburger.classList.toggle('active');
+          navLinks.classList.toggle('active');
+        });
+    </script>
+</body>
+</html>
