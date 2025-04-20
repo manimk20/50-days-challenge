@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexbox</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        font-family: Poppins;
+        font-size: 1.2rem;
+    }
+    h1 {
+        text-align: center;
+        padding: 1rem 0;
+    }
+    .container {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+        width: 100vw;
+        background: linear-gradient(to right, skyblue, blue);
+        gap: 10px;
+        padding: 10px;
+    }
+    .p1, .p2c1, .p2c2, .p3c1, .p3c2g1-1, .p3c2g1-2, .p3c2g2 {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        border: 1px solid black;
+        border-radius: 10px;
+        padding: 20px;
+        color: white;
+
+    }
+    .p1 {
+        background-color: black;
+    }
+    .p2g {
+        display: flex;
+        flex: 1;
+        gap: 10px;
+        flex-wrap: wrap;
+    }
+    .p2 {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        flex: 1;
+        min-width: 300px;
+    }
+    .p2c1 {
+        background-color: black;
+        height: 50%;
+    }
+    .p2c2 {
+        background-color: black;
+        height: 50%;
+    }
+    .p3 {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        flex: 2;
+        min-width: 300px;
+    }
+    .p3c1 {
+        background-color: black;
+        height: 25vh;
+    }
+    .p3c2 {
+        display: flex;
+        gap: 10px;
+        flex: 1;
+        flex-wrap: wrap;
+    }
+    .p3c2g1 {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        flex: 1;
+        min-width: 300px;
+    }
+    .p3c2g1-1 {
+        background-color: black;
+        flex: 1;
+    }
+    .p3c2g1-2{
+        background-color: black;
+        flex: 1;
+    }
+    .p3c2g2 {
+        background-color: black;
+        flex: 1;
+        min-height: 50vh;
+    }
+    @media screen and (max-width: 768px) {
+        .p2g, .p3c2 {
+            flex-direction: column;
+        }
+        .p2, .p3, .p3c2g1, .p3c2g2 {
+            width: 100%;
+        }
+    }
+    </style>
+</head>
+<body>
+    <h1>CSS Flexbox</h1>
+    <div class="container">
+        <div class="p1">1</div>
+        <div class="p2g">
+            <div class="p2">
+                <div class="p2c1">2</div>
+                <div class="p2c2">3</div>
+            </div>
+            <div class="p3">
+                <div class="p3c1">4</div>
+                <div class="p3c2">
+                    <div class="p3c2g1">
+                        <div class="p3c2g1-1">5</div>
+                        <div class="p3c2g1-2">6</div>
+                    </div>
+                    <div class="p3c2g2">7</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
