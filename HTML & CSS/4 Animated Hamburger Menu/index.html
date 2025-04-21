@@ -58,18 +58,22 @@
                 position:absolute;
                 top: 70px;
                 left: 0;
+                right: 50px;
                 background-color: dodgerblue;
                 width: 100%;
                 flex-direction: column;
                 padding: 20px;
                 display: none;
             }
-    
             .nav-links.active {
                 display: flex;
             }
             .hamburger {
                 display: flex;
+            }
+            .btn {
+                margin-left: auto;
+                z-index: 1001;
             }
             .hamburger.active .bar:nth-child(1) {
                 transform: rotate(45deg) translate(5px, 5px);
