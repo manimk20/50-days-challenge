@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Clock</title>
+    <style>
+         @import url('https://fonts.googleapis.com/css2?family=Saira+Stencil+One&display=swap');
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            background-color: darkviolet;
+            background-repeat: no-repeat;
+            background-size: cover;
+            color: white;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-family: Saira Stencil One;
+        }
+        .header {
+            display: flex;
+            width: 100%;
+            padding: 20px 40px;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            background: linear-gradient(0deg, rgb(65, 65, 65), rgb(8, 8, 8));
+        }
+        .clock-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 90%;
+            height: 30%;
+            margin: 0;
+            background-color: #fefefe;
+            color: black;
+            padding: 30px 40px;
+            border-radius: 35px;
+            box-shadow: 0 2px 6px #56565630;
+            max-width: 400px;
+        }
+        #clock {
+            font-size: 4rem;
+            letter-spacing: 2px;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+        #date {
+            font-size: 1.5rem;
+            color: white;
+            text-align: center;
+            margin-bottom: 20px;
+            margin-top: 20px;
+        }
+        @media (max-width:768px) {
+            .clock-container {
+                display: flex;
+                padding: 20px;
+                align-items: center;
+                justify-content: center;
+            }
+            #clock {
+                font-size: 3rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <h1>Digital Clock</h1>
+    </header>
+    <p id="date"></p>
+    <div class="clock-container">
+        <h1 id="clock">00:00:00</h1>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
