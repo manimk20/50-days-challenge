@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Changer</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Saira+Stencil+One&display=swap');
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            text-align: center;
+            font-family: Poppins;
+        }
+        h1 {
+            margin-bottom: 40px;
+            margin-top: 20px;
+            font-size: 36px;
+        }
+        .button-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+        }
+        .box {
+            flex: 1;
+            flex-wrap: wrap;
+            margin: 0 10px;
+            padding: 10px 16px;
+            border: none;
+            border-radius: 6px;
+            background-color: rgb(244, 243, 243);
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .box:hover {
+            transform: scale(1.1);
+            transition: all 0.3s ease-in-out;
+            
+        }
+        .red { background-color: red; color: white;}
+        .blue { background-color: blue; color: white;}
+        .green { background-color: green; color: white;}
+        .yellow { background-color: gold; color: white;}
+        .purple { background-color: purple; color: white;}
+        .reset { background-color: gray; color: white;}
+        @media (max-width:768px) {
+            .button-container {
+                display: flex;
+                flex-wrap: wrap;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Click a Button to Change Background</h1>
+    <div class="button-container">
+        <button class="red box" onclick="changeColor('red')">Red</button>
+        <button class="blue box" onclick="changeColor('blue')">Blue</button>
+        <button class="green box" onclick="changeColor('green')">Green</button>
+        <button class="yellow box" onclick="changeColor('gold')">Yellow</button>
+        <button class="purple box" onclick="changeColor('purple')">Purple</button>
+        <button class="reset box" onclick="changeColor('white')">Reset</button>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
