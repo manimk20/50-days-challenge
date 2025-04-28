@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password toggle</title>
+    <style>
+        * {
+          box-sizing: border-box;
+          margin: 0;
+          padding: 0;
+          font-family: Poppins, sans-serif;
+        }
+        body {
+          min-height: 100vh;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          background: linear-gradient(135deg, #667eea, #764ba2);
+        }
+        .form-container {
+          background: white;
+          padding: 30px;
+          border-radius: 10px;
+          box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+          width: 300px;
+        }
+        h2 {
+          text-align: center;
+          margin-bottom: 20px;
+        }
+        .input-group {
+          position: relative;
+          margin-bottom: 20px;
+        }
+        input[type="password"],
+        input[type="text"] {
+          width: 100%;
+          padding: 10px;
+          padding-right: 40px;
+          font-size: 1rem;
+          border-radius: 5px;
+          border: 1px solid #ccc;
+        }
+        .toggle-btn {
+          position: absolute;
+          right: 10px;
+          top: 50%;
+          transform: translateY(-50%);
+          background: none;
+          border: none;
+          cursor: pointer;
+          font-size: 0.9rem;
+          color: #333;
+        }
+        button.submit {
+          width: 100%;
+          padding: 10px;
+          background-color: #667eea;
+          color: white;
+          border: none;
+          border-radius: 5px;
+          font-size: 1rem;
+          font-weight: bold;
+          cursor: pointer;
+          transition: background 0.3s;
+        }
+        button.submit:hover {
+          background-color: #5a67d8;
+        }
+      </style>
+</head>
+<body>
+    <div class="form-container">
+        <h2>Login</h2>
+        <div class="input-group">
+          <input type="password" id="password" placeholder="Enter your password">
+          <button class="toggle-btn" onclick="togglePassword()">Show</button>
+        </div>
+        <button class="submit">Login</button>
+      </div>
+      <script src="script.js"></script>
+</body>
+</html>
